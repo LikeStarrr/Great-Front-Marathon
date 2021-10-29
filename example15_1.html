@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>    
+<body>
+    <script>
+        let range_min;
+        let range_max;
+        let str_simpleNum;
+        str_simpleNum ='';
+        range_min = +prompt("Введите нижнюю границу диапазона(>0):",0);
+        range_max = +prompt("Введите верхнюю границу диапазона(>0):",0);
+        if (range_min<1 || range_max <1 || range_min == null || range_max == null) {
+            alert("Неверный диапазон!");
+        } else {
+            if (range_max < range_min) {
+                //поменять переменные местами
+                let a;
+                a = range_min;
+                range_min = range_max;
+                range_max = a;
+            }
+            go_to_next: 
+            for (let i=range_min; i<=range_max; i++){
+                for (let j=2;j<i;j++){
+                    if (i%j==0) continue go_to_next;
+                }
+                str_simpleNum = str_simpleNum + i + ' '          
+            }
+            if (str_simpleNum == ''){
+                alert("В диапазоне от " + range_min +" до " + range_max + " простых чисел нет!");
+            } else {
+            alert("Простые числа от " + range_min +" до " + range_max + " : " + str_simpleNum);  
+            }          
+        }
+
+    </script>
+</body>
+</html>
