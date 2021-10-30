@@ -18,48 +18,41 @@
          alert("Error") ;
        } else {
          let result = Calc(nameFunc, a, b); 
-         alert("Результат: " + a + " " + nameFunc + " " + b + " = " + result );
+         alert(`Результат: ${a} ${nameFunc} ${b} = ${result}`);
        }
 
-       function Calc(nameFunc, a, b){
-        let res;
+       function Calc(nameFunc, a, b){        
         a = +a;
         b = +b;
        switch(nameFunc){
         case '+':
-            res = a + b;
-            break;
+            return a + b;           
         case '-':
-            res = a - b;
-            break;
+            return a - b;
         case '*':
-            res = a * b;
-            break;
+            return a * b;
         case '/':
             if (b!==0) {
-            res = a / b;    
+            return a / b;    
             } else {
                 alert("Делить на ноль нельзя!");
-            }             
-            break;
+            } 
         case '%':
             if (b!==0){ 
-                res = a % b;
-                break;
+                return a % b;             
             } else {
                 alert("Делить на ноль нельзя!");
             }
         case '**':
             if (b>0) { 
-            res = a ** b;
-            break;
+            return a ** b;
             } else {
                 alert("Степень должна быть > 0 !");
             }
         default:
             alert("unknown operation");
        }                   
-       return (res);     
+         
        }   
 
     </script>
