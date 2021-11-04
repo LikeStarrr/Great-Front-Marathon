@@ -8,22 +8,19 @@
        let a = prompt("Введите первое число",'');
        let b = prompt("Введите второе число",'');
        let nameFunc = prompt("Введите функцию ( +, -, *, /, :, **, ^, %-остаток от деления)",'');
-       if ((a == null) || (a == undefined) || (a == '')) {
+       a = +a;
+       b = +b;
+       if ((a === undefined) || (isNaN(a)) || ( b === undefined) || (isNaN(b)) || (nameFunc === undefined)) {
          alert("Error");  
-       } else if ((b == null) || (b == undefined)) {
-         alert("Error");   
-       } else if  ((b == null) || (b == undefined) || (b == '')) {
-         alert("Error");  
-       } else if ((nameFunc == null) || (nameFunc == undefined) || (nameFunc =='')) {
-         alert("Error") ;
        } else {
-         let result = Calc(nameFunc, a, b); 
+         let result = Calc(nameFunc, a, b);
+         if (result !== undefined){  
          alert(`Результат: ${a} ${nameFunc} ${b} = ${result}`);
+         }
        }
 
        function Calc(nameFunc, a, b){        
-        a = +a;
-        b = +b;
+      
        switch(nameFunc){
         case '+':
             return a + b;           
