@@ -21,7 +21,7 @@ function deleteTask(nameTask){
 }
 
 function showList(){
-    let listToDo = "ToDo:\n";
+    let listToDo = "To Do:\n";
     let listInProgress = "In Progress:\n";
     let listDone = "Done:\n";
     for (let task in list) {
@@ -33,7 +33,7 @@ function showList(){
             listDone += ` "${task}",\n`;
         } 
     }
-    if (listToDo === "ToDo:\n") listToDo += " \u2013\n";
+    if (listToDo === "To Do:\n") listToDo += " \u2013\n";
     if (listInProgress === "In Progress:\n") listInProgress += " \u2013\n";
     if (listDone === "Done:\n") listDone += " \u2013\n";
     
