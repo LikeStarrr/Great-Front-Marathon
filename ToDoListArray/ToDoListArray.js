@@ -12,75 +12,99 @@ const list = [
         priority: 'high'  
     } 
     ] 
-    
+const STATUS_TO_DO = "To Do";
+const STATUS_IN_PROGRESS = "In Progress";
+const STATUS_DONE = "Done";     
+
 function changeStatus (nameTask, statusTask) {
     for (i=0; i <= list.length; i++){
         for (let key in list[i]){
             if (list[i][key]  === nameTask) {
                 list[i].status = statusTask;
+            }
         }
     }
 }
+
+function getNextId(){
+    var maxid = 0;
+   
+    list.map(function(obj){     
+      if (obj.id > maxid) maxid = obj.id;    
+    });
+    return maxid + 1;      
 }
-    
-    function addTask(nameNewTask, priorityNewTask) {
-    const number_New_element = list.length + 1 ;
+
+function addTask(nameNewTask, priorityNewTask) {
+    const numberNewTask = getNextId();   
     list.push(
         {
-        id: number_New_element,
+        id: numberNewTask,
         name: nameNewTask,
-        status: "To Do",
+        status: STATUS_TO_DO,
         priority: priorityNewTask,
         } 
     )
-    }
+}
       
     function deleteTask(nameTask){
-        const resFindTask = list.indexOf(list.name === nameTask, 0);
-        if (!~resFindTask) { list.splice(resFindTask, 1);
+        var idTask = 0;
+   
+        list.map(function(obj){     
+        if (obj.name === nameTask) idTask = obj.id;    
+        });       
+       
+        if (idTask>0) {
+            list.splice(idTask - 1, 1, {});
         }
     }
     
+    function showListByStatus(statusTask){
+        let listFilteredByStatus = list.filter(list => list.status === statusTask); 
+        if (!listFilteredByStatus.length) {
+            console.log("--");
+        } else {
+            for (let task of listFilteredByStatus) {
+                console.log(`id ${task.id}  "${task.name}" `);                       
+            };        
+        }       
+    }
+
     function showList(){
-        let captionToDo = "To Do:";
-        let captionInProgress = "In Progress:";
-        let captionDone = "Done:";
-        let arrToDo = list.filter(list => list.status === "To Do");
-        let arrInProgress = list.filter(list => list.status === "In Progress");
-        let arrDone = list.filter(list => list.status === "Done");
-        if (arrToDo.length === 0) { 
-            arrToDo = '-'; }
-        if (arrInProgress.length === 0) {
-            arrInProgress = '-'; }
-        if (arrDone.length === 0) {
-            arrDone = '-';} 
+        let captionToDo = STATUS_TO_DO + ":";
+        let captionInProgress = STATUS_IN_PROGRESS +":";
+        let captionDone = STATUS_DONE + ":";
+               
         console.log(captionToDo);
-        console.log(arrToDo);
+        showListByStatus(STATUS_TO_DO);
         console.log(captionInProgress);
-        console.log(arrInProgress);
+        showListByStatus(STATUS_IN_PROGRESS);
         console.log(captionDone);
-        console.log(arrDone);
+        showListByStatus(STATUS_DONE);
     }
 
     function ShowAllList(){
+        console.log('All ToDoList:')
       for (i=0; i< list.length; i++){
         console.log(list[i]); 
         }  
     }
    
     changeStatus('create a post', 'Done'); 
-    //ShowAllList();
-    addTask('go to work', 'low');
-    //ShowAllList();
-    //deleteTask('go to work');
-    //ShowAllList();
-
+    addTask('333', 'low');
+    addTask('444', 'low');
+    deleteTask('333');
+    addTask('555', 'low');
+    addTask('6666', 'low');
+    addTask('7777', 'low');
+    deleteTask('555');   
+    addTask('2222', 'low');
+    ShowAllList(); 
     showList();
+    //ShowAllList();
 
 
-   // addTask('have a walk');
-   // addTask('go to work');
-   // addTask('come home');
+
    // changeStatus('write a post', 'Done');
    // changeStatus('go to work', 'In Progress');
    // changeStatus('have a walk', 'Done');
