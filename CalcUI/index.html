@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <div class="calc">
+        <p id="display" class="display">0</p>         
+        <div class="calc__panel">    
+        <div class="calc__row">
+            <button id="reset" class="calc__btn calc__btn--double calc__btn--reset" onclick="clear_display()">C</button>
+            <button id="delete" class="calc__btn" onclick="clear_1symbol()">&#x232b</button>
+            <button id="div" class="calc__btn calc__btn--operand" onclick="setOperator('div')">÷</button>
+        </div>
+        <div class="calc__row">
+            <button id="7" class="calc__btn" onclick="press('7')">7</button>
+            <button id="8" class="calc__btn" onclick="press('8')">8</button>
+            <button id="9" class="calc__btn" onclick="press('9')">9</button>    
+            <button id="multi" class="calc__btn calc__btn--operand" onclick="setOperator('multi')">×</button>       
+        </div>
+        <div class="calc__row">
+            <button id="4" class="calc__btn" onclick="press('4')">4</button>
+            <button id="5" class="calc__btn" onclick="press('5')">5</button>
+            <button id="6" class="calc__btn" onclick="press('6')">6</button>    
+            <button id="sub" class="calc__btn calc__btn--operand" onclick="setOperator('sub')">-</button>       
+        </div>   
+        <div class="calc__row">
+            <button id="1" class="calc__btn" onclick="press('1')">1</button>
+            <button id="2" class="calc__btn" onclick="press('2')">2</button>
+            <button id="3" class="calc__btn" onclick="press('3')">3</button>    
+            <button id="sum" class="calc__btn calc__btn--operand" onclick="setOperator('sum')">+</button>       
+        </div>
+        <div class="calc__row">
+            <button id="0" class="calc__btn calc__btn--triple" onclick="press('0')">0</button>
+            <button id="result" class="calc__btn calc__btn--operand" onclick="getResult()">=</button>             
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>          
+</body>
+
+
+</html>
