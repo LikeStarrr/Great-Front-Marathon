@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <div class="container">
+        <div class="app">
+          <h2>HIGH</h2>
+          <form id="form_high">
+            <input type="text" placeholder="Добавить важных дел">
+            <button type="button" onclick="addTask();return false">&plus;</button>
+          </form>
+          <ul>
+            <li>
+              <input type="checkbox" onclick="taskComplete(this)" class="check">
+              <input type="text" value="My Task" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+              <button class="delete" onclick="removeTask(this)">x</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="app">
+            <h2>LOW</h2>
+            <form id="form_low">
+                <input type="text" placeholder="Добавить">
+                <button type="button" onclick="addTask();return false">&plus;</button>
+            </form>
+            <ul>
+                <li>
+                  <input type="checkbox" onclick="taskComplete(this)" class="check">
+                  <input type="text" value="My Task" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+                  <i class="fa fa-trash" onclick="removeTask(this)"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="view.js"></script>          
+</body>
+
+
+</html>
