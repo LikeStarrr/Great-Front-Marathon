@@ -4,10 +4,11 @@ let operator = "";
 let isReadyForNewData = false;
 let isChange = false;   //press '=' without changing operator and operand
 let isItCanClear1 = true;   
-let display = document.getElementById("display");
 let lastAction ="";
 let resultReal = 0;
+import {UI_ELEMENTS} from './view.js';
 
+let UI_operators = UI_ELEMENTS.btnOperator;
 function setOperator(inputOperator){
     operand1 = +(display.innerText);
     operator = inputOperator;
@@ -68,8 +69,9 @@ function Calculator(firstOperand, secondOperand, selectedOperator) {
        
 }
 
+btnClear.addEventListener('click', clear_display)
 function clear_display() {
-    display.innerText = 0;
+    display.innerText = '0';
     operator = "";
     operand1 = 0;
     operand2 = 0;
@@ -78,7 +80,7 @@ function clear_display() {
     isChange = false;
     isReadyForNewData = true;
 }
-
+btnDelete.addEventListener('click', clear_1symbol)
 function clear_1symbol() {
     let textBeforeDel1 = display.innerText;
     if (isItCanClear1) {
@@ -89,6 +91,7 @@ function clear_1symbol() {
         }   
     }
 }
+
 function press(x) {
     if (lastAction === "equals") {
         operand2 = 0;
@@ -97,7 +100,7 @@ function press(x) {
         resultReal = 0;
     }
     if (isReadyForNewData === true) {
-        display.innerText = 0;
+        display.innerText = "0";
         isReadyForNewData = false;
 
     }        
