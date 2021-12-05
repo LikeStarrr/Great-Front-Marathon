@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ToDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <div class="container">
+        <div class="priority">
+          <h2>HIGH</h2>
+          <form onsubmit="alert('11111');return false" id="form_high" class="form_inputToDo" >
+            <input class="input_text" type="text" placeholder="Добавить важных дел">
+            <button class="task_add"><img src="./img/add-icon.svg" alt="Иконка добавить задачу"></button>
+          </form>
+        </div>
+        <div class="priority">           
+          <h2>LOW</h2>
+          <form onsubmit="return false" id="form_low" class="form_inputToDo" >
+            <input class="input_text" type="text" placeholder="Добавить">
+            <button class="task_add"><img src="./img/add-icon.svg" alt="Иконка добавить задачу"></button>
+          </form>            
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+         
+</body>
+</html>

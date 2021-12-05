@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+    box-sizing: border-box;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    background-color: #E5E5E5;
+    overflow: auto;
+}
+
+input, button {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    box-shadow: none;
+    outline:none;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 12px;
+}
+
+.container {
+    background-color: #FFFFFF;;
+    max-width: 476px;
+    width: 100%;
+    min-height: 688px;
+    margin: 10px auto 0;
+    padding: 25px 8px;
+}
+
+.form_inputToDo {
+    width: 460px;
+    height: 45px;
+    border: 1px solid #989898;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+    padding: 12px;
+}
+
+.input_text {
+    height: 45px;
+    width: 400px;
+    font-size: 18px;
+}
+
+.task_add {
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.task_delete {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+
+.task {
+    width: 460px;
+    margin-top: 8px;
+    border: 1px solid #989898;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+	align-items: center;
+    padding: 12px;
+    background-color: #FFFFFF;;
+}
+
+.task_check {
+    display: none;
+}
+
+.task_add:hover {
+    background-color: #d4d3d3
+}
+.task_add:active {
+    background-color: #d4d3d3
+}
+.task_delete:hover {
+    background-color: #d4d3d3
+}
+.task_delete:active {
+    background-color: #d4d3d3
+}
+
+.cursor {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    border: 1px solid #998899;
+    position: relative;
+}
+
+.cursor::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    cursor: pointer;
+    opacity: 0;
+} 
+
+.task_check:checked + .cursor::before {
+    opacity: 1;
+}
+
+.done {
+    background-color: #F4F4F4;
+}
+
+.task_text {
+    padding: 0 18px 0 12px;
+    width: 400px;
+    word-break: break-all;
+}
+
+
