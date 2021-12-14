@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Genders and countries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <input class="text" placeholder="Введите имя" />
+    <input type="button" value="Узнать пол" onclick="submit()" />
+    <script>
+      function submit() {
+        const inputText = document.querySelector(".text");
+        const firstName = inputText.value;
+        const serverUrlGender = "https://api.genderize.io";
+        const serverUrlCountry = "https://api.nationalize.io";
+        const urlGender = `${serverUrlGender}?name=${firstName}`;
+        const urlCountry = `${serverUrlCountry}?name=${firstName}`;
+        getGender(urlGender);
+        getCountry(urlCountry);
+      }
+
+      function getGender(url) {
+        fetch(url)
+          .then((response) => response.json())
+          .then((result) => {
+            if (result.gender === null) {
+              alert(`Name is not found`);
+            } else {
+              alert(`Gender is ${result.gender}`);
+            }
+          })
+          .catch(() => alert("Server error!"));
+      }
+
+      function getCountry(url) {
+        let countryID = "";
+        fetch(url)
+          .then((response) => response.json())
+          .then((result) => {
+            countryID = result.country[0].country_id;
+            if (countryID === null) {
+              alert(`Country is not found`);
+            } else {
+              alert(`Country is ${countryID}`);
+            }
+          })
+          .catch(() => alert("Server error!"));
+      }
+    </script>
+  </body>
+</html>
