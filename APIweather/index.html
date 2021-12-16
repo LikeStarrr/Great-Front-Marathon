@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>API weather</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>   
-    <div class="container">
-        <div class="city">
-          <form onsubmit="return false" id="form_city" class="form_input" >
-            <input class="input_city" type="text" placeholder="Actobe">
-            <button class="find"><img src="./img/find-icon.svg" alt="Find city"></button>
-          </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="weather__wrapper">
+      <form onsubmit="return false" class="weather__search">
+        <input class="input-search" type="text" placeholder="Aktobe" />
+        <button class="btn-search">
+          <img src="./img/icon-search.svg" alt="Search" />
+        </button>
+      </form>
+      <div class="info-block">
+        <div class="tabs">
+          <div id="tab_now" class="tabs__block block-1">
+            <p class="temperature">14<span>&#176;</span></p>
+            <img class="icon-weather" src="./img/icon-cloud.svg" alt="Cloud" />
+
+            <div class="now-bottom">
+              <h2 class="now-location">Aktobe</h2>
+              <button class="btn-favorite">
+                <img src="./img/icon-shape.svg" alt="Favorites" />
+              </button>
+            </div>
+          </div>
+
+          <div id="tab_details" class="tabs__block block-2">
+            <h2 class="details-location">Aktobe</h2>
+            <ul class="details-list">
+              <li class="list-elem"></li>
+              <li class="list-elem"></li>
+              <li class="list-elem"></li>
+              <li class="list-elem"></li>
+              <li class="list-elem"></li>
+            </ul>
+          </div>
+
+          <div id="tab_forecast" class="tabs__block block-3"></div>
+
+          <div class="tabs__item">
+            <a href="#tab_now" class="tab tab-now">Now</a>
+            <a href="#tab_details" class="tab tab-details">Details</a>
+            <a href="#tab_forecast" class="tab tab-forecast">Forecast</a>
+          </div>
         </div>
 
+        <div class="weather__locations">
+          <div class="added-locations">
+            <h2>Added location:</h2>
+          </div>
+          <div class="list-locations">
+            <p class="loc-elem">Amur</p>
+            <p class="loc-elem">Samara</p>
+            <p class="loc-elem">Bali</p>
+            <p class="loc-elem">Dane</p>
+            <p class="loc-elem">Kilo</p>
+            <p class="loc-elem">Nur-sultan</p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>        
+    <script src="./js/main.js"></script>
+  </body>
+</html>
