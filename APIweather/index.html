@@ -16,7 +16,7 @@
   <body>
     <div class="weather__wrapper">
       <form onsubmit="return false" class="weather__search">
-        <input class="input-search" type="text" placeholder="Aktobe" />
+        <input class="input-search" type="text" placeholder="Enter city name" />
         <button class="btn-search">
           <img src="./img/icon-search.svg" alt="Search" />
         </button>
@@ -24,19 +24,20 @@
       <div class="info-block">
         <div class="tabs">
           <div id="tab_now" class="tabs__block block-1">
-            <p class="temperature">14<span>&#176;</span></p>
-            <img class="icon-weather" src="./img/icon-cloud.svg" alt="Cloud" />
-
-            <div class="now-bottom">
-              <h2 class="now-location">Aktobe</h2>
-              <button class="btn-favorite">
-                <img src="./img/icon-shape.svg" alt="Favorites" />
-              </button>
+            <p class="temperature"></p>
+            <img class="icon-weather" src />
+            <div class="now-botton">
+              <form onsubmit="return false" class="form__favorite">
+                <h2 class="now-location"></h2>
+                <button class="btn-favorite">
+                  <img class="img-favorite" src="./img/icon-shape.svg" alt="Favorites" />
+                </button>
+              </form>
             </div>
           </div>
 
           <div id="tab_details" class="tabs__block block-2">
-            <h2 class="details-location">Aktobe</h2>
+            <h2 class="details-location"></h2>
             <ul class="details-list">
               <li class="list-elem"></li>
               <li class="list-elem"></li>
