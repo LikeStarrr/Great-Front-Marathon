@@ -1,17 +1,24 @@
 const UI = {
   INPUT_SEARCH: document.querySelector(".input-search"),
-  BTN_SEARCH: document.querySelector(".btn-search"),
-  BTN_FAVORITE: document.querySelector(".btn-favorite"),
-  IMG_FAVORITE: document.querySelector(".btn-favorite"),
-  TAB_NOW: document.querySelector(".tab_now"),
-  TAB_DETAILS: document.querySelector(".tab_details"),
-  TAB_FORECAST: document.querySelector(".tab_forecast"),
-  UL_DETAILS: document.querySelectorAll(".list-elem"),
-  TEMPERATURE_NOW: document.querySelector(".temperature"),
-  IMG_WEATHER_NOW: document.querySelector(".icon-weather"),
-  LOCATION_NOW: document.querySelector(".now-location"),
-  LOCATION_DETAILS: document.querySelector(".details-location"),
+  BTN_SEARCH: document.querySelector(".btn-search"),  
 };
+const NOW = {
+  TAB: document.querySelector(".tab_now"),  
+  TEMPERATURE: document.querySelector(".temperature"),
+  IMG_WEATHER: document.querySelector(".icon-weather"),
+  LOCATION: document.querySelector(".now-location"),
+  BTN_FAVORITE: document.querySelector(".btn-favorite"), 
+}
+ const DETAILS = {
+  TAB: document.querySelector(".tab_details"),
+  LOCATION: document.querySelector(".details-location"), 
+  UL: document.querySelectorAll(".list-elem"),
+ }
+ const FORECAST = {
+  TAB: document.querySelector(".tab_forecast"),
+ }
+
+
 
 UI.BTN_SEARCH.addEventListener("click", function () {
   getWeather();
@@ -42,21 +49,20 @@ function getWeather() {
         Sunrise: getTimeFromUnix(result.sys.sunrise),
         Sunset: getTimeFromUnix(result.sys.sunset),
       };
-
-
-      
+     
       let srcWeatherImg = result.weather[0].icon;
-      UI.IMG_WEATHER_NOW.src = `http://openweathermap.org/img/wn/${srcWeatherImg}@2x.png`;
+      NOW.IMG_WEATHER.src = `http://openweathermap.org/img/wn/${srcWeatherImg}@2x.png`;
       let i = 0;
       for (let key in weatherInfo) {
-        UI.UL_DETAILS[i].textContent = `${key} : ${weatherInfo[key]} `;
+        DETAILS.UL[i].textContent = `${key} : ${weatherInfo[key]} `;
         i++;
       }
-      UI.TEMPERATURE_NOW.textContent = Math.round(result.main.temp) + "\u2103";
-      UI.LOCATION_NOW.textContent = cityName;
-      UI.LOCATION_DETAILS.textContent = cityName;
+      NOW.TEMPERATURE.textContent = Math.round(result.main.temp) + "\u2103";
+      NOW.LOCATION.textContent = cityName;
+      DETAILS.LOCATION.textContent = cityName;
     });
   UI.INPUT_SEARCH.value = "";
+  NOW.TAB.classList.add(':target');
 }
 
 function getTimeFromUnix(timestamp) {
