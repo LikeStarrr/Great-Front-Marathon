@@ -43,6 +43,8 @@ function getWeather() {
         Sunset: getTimeFromUnix(result.sys.sunset),
       };
 
+
+      
       let srcWeatherImg = result.weather[0].icon;
       UI.IMG_WEATHER_NOW.src = `http://openweathermap.org/img/wn/${srcWeatherImg}@2x.png`;
       let i = 0;
