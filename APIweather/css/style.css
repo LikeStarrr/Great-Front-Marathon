@@ -109,7 +109,7 @@ h2 {
 .tabs__block:target {
   position:absolute;
   display: block;
-  z-index: 1;
+  z-index: 2;
 }
 
 .tabs__item {
@@ -129,6 +129,10 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#tab-now {
+  position:relative;
 }
 
 .block-1:target ~ .tabs__item .tab-now,
@@ -243,7 +247,7 @@ h2 {
   margin-bottom: 14px;
 }
 
-.favour_elem{
+.favorite_elem{
   display: flex;
   justify-content:space-between;
 }
