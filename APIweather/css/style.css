@@ -99,6 +99,7 @@ h2 {
 .tabs__block {
   position: absolute;
   z-index: 3;
+  width: 297px;
   height: 345px;
   display: none;
 }
@@ -237,14 +238,17 @@ h2 {
 }
 
 .list-locations {
-  padding-top: 35px;
+  height: 315px;
+  padding-top: 15px;
   padding-left: 18px;
   padding-right: 18px;
   text-transform: capitalize;
+  overflow-y: scroll;
 }
 
 .loc-elem {
   margin-bottom: 14px;
+  cursor:pointer;
 }
 
 .favorite_elem{
